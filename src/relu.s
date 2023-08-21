@@ -24,14 +24,14 @@ loop_start:
     
 
 loop_continue:
-    addi t0, x0, 1
-    
-    
+ 
     lw t2, 0(a0)
-    addi a0, x0, 4
+    addi a0, a0, 4
+    addi t0, t0, 1
     bgt t2, x0, loop_start
     sw x0, -4(a0) 
-
+    j loop_start
+    
 exit_relu:
     li a1, 32
     j exit2
