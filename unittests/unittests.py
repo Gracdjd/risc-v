@@ -58,7 +58,7 @@ class TestArgmax(TestCase):
         # set a1 to the length of the array
         t.input_scalar("a1", len(array0))
         # call the `argmax` function
-        t.call("argmx")
+        t.call("argmax")
         # check that the register a0 contains the correct output
         t.check_scalar("a0", 8)
         # generate the `assembly/TestArgmax_test_simple.s` file and run it through venus
