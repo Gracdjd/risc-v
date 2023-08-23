@@ -17,12 +17,29 @@
 argmax:
 
     # Prologue
-
-
+    li t0, 1
+    blt a1, t0, argmax_exit 
+    #max
+    lw t1, 0(a0)
+    #迭代i
+    li t0, 1
+    #index
+    li t2, 0
 loop_start:
+
+    beq t0, a1, loop_end
+    addi a0, a0, 4
+    lw t3, (0)a0
+    
 
 
 loop_continue:
+    bgt t1, t3 loop_start
+    add t1, t3, x0
+    add t2, t0, x0
+    addi t0, t0, 1
+    j loop_start
+    
 
 
 loop_end:
@@ -32,3 +49,6 @@ loop_end:
 
 
     ret
+argmax_exit:
+    li a1, 32
+    j exit2
