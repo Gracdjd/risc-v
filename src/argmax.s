@@ -29,7 +29,7 @@ loop_start:
 
     beq t0, a1, loop_end
     addi a0, a0, 4
-    lw t3, (0)a0
+    lw t3, 0(a0)
     
 
 
@@ -43,7 +43,7 @@ loop_continue:
 
 
 loop_end:
-    
+    add a0, t2, x0
 
     # Epilogue
 
