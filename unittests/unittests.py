@@ -80,13 +80,13 @@ class TestDot(TestCase):
         t.input_array("a0", array0)
         t.input_array("a1", array1)
         # load array attributes into argument registers
-        t.input_scalar("a2", 9)
+        t.input_scalar("a2", 3)
         t.input_scalar("a3", 1)
-        t.input_scalar("a4", 1)
+        t.input_scalar("a4", 2)
         # call the `dot` function
         t.call("dot")
         # check the return value
-        t.check_scalar("a0", 285)
+        t.check_scalar("a0", 22)
         t.execute()
 
     @classmethod
