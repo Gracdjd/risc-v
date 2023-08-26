@@ -26,7 +26,11 @@
 matmul:
 
     # Error checks
-
+    li t0, 1
+    blt a1, t0, exit_34
+    blt a2, t0, exit_34
+    bne a2, a4, exit_34
+    blt a5, t0, exit_34
 
     # Prologue
 
@@ -61,3 +65,8 @@ outer_loop_end:
     
     
     ret
+
+
+exit_34
+    li a1, 34
+    j exit2
